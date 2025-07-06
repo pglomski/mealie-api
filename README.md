@@ -34,25 +34,23 @@ pip install .
 
 ### 📝 Usage
 
+```bash
+echo "mealiedomain.com" > domain.txt
+echo "home" > group.txt
+echo "123456abcdef" > openai.key
+echo "123456abcdef" > mealie.key
+```
+
 ```python
-from mealie import MealieClient
+import mealie_api
 
-client = MealieClient(
-    url="https://your-mealie-url.com",
-    token="your_api_token"
-)
-
-# Fetch a list of recipes
-recipes = client.recipes.list()
+recipes = mealie_api.get_recipes()
 
 # Get a single recipe by slug
-recipe = client.recipes.get("my-best-pancakes")
+recipe = mealie_api.Recipe("snickerdoodles")
 
-# Create a new recipe (basic example)
-new_recipe = client.recipes.create({
-    "name": "Simple Stir Fry",
-    "description": "Fast, easy, and healthy!"
-})
+# Set the description field with OpenAI ChatGPT
+recipe.set_description()
 ```
 
 See [examples](examples/) for more usage patterns.
