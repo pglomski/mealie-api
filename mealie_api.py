@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""A simple customized Mealie API wrapper."""
+"""A simple customized Mealie API wrapper.
+
+Requires:
+  - mealie.key
+  - openai.key
+  - domain.txt
+  - group.txt
+
+"""
 #pylint: disable=line-too-long
 
 import json
